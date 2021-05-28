@@ -3,9 +3,11 @@ import {
     hero,
     heroContent,
     logoAnimate,
-    scrollSvg,
     heroBackground,
     heroBackgroundImg
+} from '../styles/hero.module.scss'
+import {
+    scrollSvg
 } from '../styles/index.module.scss'
 
 const Hero = () => {

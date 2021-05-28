@@ -20,6 +20,10 @@ p
     color: $greyColor;
     font-size: 21px;
     font-weight: 300;
+    @media (max-width: 376px)
+    {
+        font-size: 18px;
+    }
 }
 
 h1
@@ -27,6 +31,18 @@ h1
     font-family: "Bungee", cursive;
     color: $blueColor;
     font-size: 72px;
+    @media (max-width: 692px)
+    {
+        font-size: 42px;
+    }
+    @media (max-width: 376px)
+    {
+        font-size: 36px;
+    }
+    @media (max-width: 298px)
+    {
+        font-size: 32px;
+    }
 }
 
 h2
@@ -34,7 +50,19 @@ h2
     font-family: "Bungee Hairline", cursive;
     color: $greyColor;
     font-size: 60px;
-    font-weight: 400;
+    font-weight: 600;
+    @media (max-width: 692px)
+    {
+        font-size: 34px;
+    }
+    @media (max-width: 376px)
+    {
+        font-size: 30px;
+    }
+    @media (max-width: 298px)
+    {
+        font-size: 28px;
+    }
 }
 
 h3
@@ -63,36 +91,6 @@ h6
     font-weight: 300;
 }
 
-.hero
-{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(180deg, $gradient1Color1, $gradient1Color2);
-    position: relative;
-    overflow: hidden;
-
-    .hero-content
-    {
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        top: 40%;
-        z-index: 10;
-
-        .logo-animate
-        {
-            width: 300px;
-            height: 55px;
-            background-image: url(../images/image.svg);
-            fill: white;
-            background-repeat: no-repeat;
-            margin: auto;
-            opacity: 0.9;
-            background-size: cover;
-        }
-    }
-}
-
 .scrollSvg
 {
     width: auto;
@@ -109,24 +107,5 @@ h6
     {
         transform: scale(1.4);
         fill: $yellowColor;
-    }
-}
-
-.hero-background
-{
-    width: 100%;
-    z-index: 0;
-    position: absolute;
-    left: -5px;
-    bottom: 0; 
-
-    .hero-background-img
-    {
-        background-image: url(../images/wave.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: calc(100% + 10px);
-        height: 500px;
-        margin: auto; 
     }
 }
