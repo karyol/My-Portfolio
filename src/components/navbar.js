@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import translator from '../components/translator'
 import { 
     nav,
     navItems,
@@ -18,7 +17,6 @@ const MenuDiv = styled.div`
 `;
 
 const Navbar = () => {
-    new translator();
     const[show, showMenu] = React.useState(false);
     const[disp, dispMenu] = React.useState(false);
 

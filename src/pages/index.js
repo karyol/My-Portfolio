@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 import Navbar from '../components/navbar'
 import Hero from '../components/hero'
 import Home from '../components/home'
