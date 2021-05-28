@@ -1,6 +1,5 @@
 import * as React from 'react'
 import MainLayout from '../components/mainLayout'
-import Navbar from '../components/navbar'
 
 const tak = () => {
     return (

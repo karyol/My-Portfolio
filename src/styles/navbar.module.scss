@@ -1,5 +1,13 @@
 @import "./colors.module.scss";
 
+@media (max-width: 930px)
+{
+    h3
+    {
+        margin: 0;
+    }
+}
+
 .nav
 {
     width: 100%;
@@ -40,18 +48,34 @@
         .menu
         {
             margin-top: 15px;
-            width: 600px;
+            width: 594px;
             height: auto;
-            position: absolute;
-            right: 10%;
+            position: relative;
+            float: right;
             background-color: rgba(255, 255, 255, 0.3);
             transition: 0.5s opacity ease-in-out;
+            @media (max-width: 930px)
+            {
+                padding-right: 10px;
+                padding-top: 5px;
+                width: 150px;
+                height: 255px;
+                clear: both;
+                left: 2%;
+            }
 
             a
             {
-                padding-right: 5%;
-                float: right;
+                padding-left: 5%;
+                float: left;
                 margin-top: 5px;
+                @media (max-width: 930px)
+                {
+                    padding-left: 0;
+                    padding-right: 5%;
+                    float: none;
+                    text-align: right;
+                }
 
                 &:hover
                 {
@@ -64,6 +88,7 @@
         #nav-icon2
         {
             position: relative;
+            left: 2%;
             width: 40px;
             height: 40px;
             float: right;
@@ -73,11 +98,6 @@
             background-color: transparent;
             border: none;
             outline: none;
-
-            // &:focus ~ .menu
-            // {
-            //     opacity: 1;
-            // }
 
             span
             {
@@ -123,6 +143,35 @@
                 {
                     top: 28px;
                 }
+            }
+        }
+    }
+
+    .language
+    {
+        border: none;
+        position: relative;
+        top: 17px;
+        left: 3%;
+        font-family: "Bungee", cursive;
+        font-size: 21px;
+        color: $yellowColor;
+        float: right;
+
+        select
+        {
+            padding: 5px 8px;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+
+            textarea
+            {
+                font-family: "Bungee", cursive;
             }
         }
     }
