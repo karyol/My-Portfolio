@@ -1,0 +1,25 @@
+@import "./index.module.scss";
+
+.home
+{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, $gradient2Color1, $gradient2Color2);
+
+    .home-content
+    {
+        @media (min-width: 866px)
+        {
+            width: 80%;
+        }
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 7%;
+        @media (max-width: 866px)
+        {
+            padding-top: 25%;
+        }
+    }
+}

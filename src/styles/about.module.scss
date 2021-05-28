@@ -1,0 +1,272 @@
+@import "./index.module.scss";
+
+.about
+{
+    background-image: linear-gradient(180deg, $gradient2Color1, $gradient2Color2);
+    width: 100%;
+    min-height: 100vh;
+
+    .about-content
+    {
+        margin: auto;
+        width: 80%;
+        text-align: center;
+        padding-top: 10%;
+        @media (max-width: 866px)
+        {
+            padding-top: 25%;
+        }
+
+        .desc
+        {
+            height: 30%;
+            text-align: left;
+
+            .desc-text
+            {
+                width: 80%;
+                height: 100%;
+                float: left;
+                text-align: center;
+                @media (max-width: 1100px)
+                {
+                    float: none;
+                    width: 100%;
+                }
+
+                p
+                {
+                    padding-top: 1%;
+                }
+            }
+
+            .desc-photo
+            {
+                width: 20%;
+                height: 100%;
+                float: right;
+                margin-top: 2%;
+                overflow: hidden;
+                @media (max-width: 1600px)
+                {
+                    text-align: center;
+                }
+                @media (max-width: 1400px)
+                {
+                    text-align: right;
+                }
+                @media (max-width: 1100px)
+                {
+                    float: none;
+                    width: 100%;
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+
+                img
+                {
+                    width: 184px;
+                    height: auto;
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .technologies
+        {
+            width: 100%;
+            overflow: auto;
+            padding: 2% 0 2% 0;
+
+            .tech-item
+            {
+                width: auto;
+                height: 100%;
+                border: none;
+                margin: 10px;
+                display: inline-block;
+
+                .icon-html
+                {
+                    fill: #e69a00;
+                    height: 130px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #E44D26;
+                        }
+
+                        .st1
+                        {
+                            fill: #F16529;
+                        }
+
+                        .st2
+                        {
+                            fill: #242b3b;
+                        }
+                    }
+                }
+
+                .icon-css
+                {
+                    fill: #e69a00;
+                    height: 120px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #1F62AE;
+                        }
+
+                        .st1
+                        {
+                            fill: #3C9BD5;
+                        }
+
+                        .st2
+                        {
+                            fill: #242b3b;
+                        }
+                    }
+                }
+
+                .icon-js
+                {
+                    fill: #e69a00;
+                    height: 90px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    .st1
+                    {
+                        fill: none;
+                    }
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #FFCE00;
+                        }
+
+                        .st1
+                        {
+                            fill: #242b3b;
+                        }
+                    }
+                }
+
+                .icon-bootstrap
+                {
+                    fill: #e69a00;
+                    height: 90px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #563D7C;
+                        }                        
+                    }
+                }
+
+                .icon-jquery
+                {
+                    fill: #e69a00;
+                    height: 50px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.1);
+
+                        .st0
+                        {
+                            fill: #242b3b;
+                        }
+
+                        .st1
+                        {
+                            fill: #0669AC;
+                        }
+                    }
+                }
+
+                .icon-node
+                {
+                    fill: #e69a00;
+                    height: 110px;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.1);
+
+                        .st0
+                        {
+                            fill: #699F63;
+                        }
+
+                        .st1
+                        {
+                            fill: #242b3b;
+                        }
+
+                        .st2
+                        {
+                            fill: #3FAE2A;
+                        }
+
+                        .st3
+                        {
+                            fill: #41873F;
+                        }
+                    }
+                }
+            }
+
+            .clear
+            {
+                clear: both;
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+@import "/node_modules/bootstrap/scss/bootstrap";
+@import "./colors.module.scss";
+@import "https://fonts.googleapis.com/css?family=Bungee|Bungee+Hairline|Montserrat:300";
+
+*
+{
+    margin: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar
+{
+    display: none;
+}
+
+p
+{
+    font-family: "Montserrat", sans-serif;
+    color: $greyColor;
+    font-size: 21px;
+    font-weight: 300;
+    @media (max-width: 376px)
+    {
+        font-size: 18px;
+    }
+}
+
+h1
+{
+    font-family: "Bungee", cursive;
+    color: $blueColor;
+    font-size: 72px;
+    @media (max-width: 692px)
+    {
+        font-size: 42px;
+    }
+    @media (max-width: 376px)
+    {
+        font-size: 36px;
+    }
+    @media (max-width: 298px)
+    {
+        font-size: 32px;
+    }
+}
+
+h2
+{
+    font-family: "Bungee Hairline", cursive;
+    color: $greyColor;
+    font-size: 60px;
+    font-weight: 600;
+    @media (max-width: 692px)
+    {
+        font-size: 34px;
+    }
+    @media (max-width: 376px)
+    {
+        font-size: 30px;
+    }
+    @media (max-width: 298px)
+    {
+        font-size: 28px;
+    }
+}
+
+h3
+{
+    font-family: "Bungee", cursive;
+    color: $greyColor;
+    font-size: 24px;
+    text-shadow: 1px 1px $yellowColor;
+    line-height: 1.5;
+}
+
+h4
+{
+    font-family: "Bungee", cursive;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+h6
+{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.scrollSvg
+{
+    width: auto;
+    height: 50px;
+    fill: $blueColor;
+    margin: 3% 0% 4% 0%;
+    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+    transition-property: initial;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    transition-delay: initial;
+
+    &:hover
+    {
+        transform: scale(1.4);
+        fill: $yellowColor;
+    }
+}

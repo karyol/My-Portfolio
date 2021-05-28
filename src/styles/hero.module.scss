@@ -1,0 +1,50 @@
+@import "./index.module.scss";
+
+.hero
+{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, $gradient1Color1, $gradient1Color2);
+    position: relative;
+    overflow: hidden;
+
+    .hero-content
+    {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        z-index: 10;
+
+        .logo-animate
+        {
+            width: 300px;
+            height: 55px;
+            background-image: url(../images/image.svg);
+            fill: white;
+            background-repeat: no-repeat;
+            margin: auto;
+            opacity: 0.9;
+            background-size: cover;
+        }
+    }
+}
+
+.hero-background
+{
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    left: -5px;
+    bottom: 0; 
+
+    .hero-background-img
+    {
+        background-image: url(../images/wave.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: calc(100% + 10px);
+        height: 500px;
+        margin: auto; 
+    }
+}

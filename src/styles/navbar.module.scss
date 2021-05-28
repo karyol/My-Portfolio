@@ -1,0 +1,178 @@
+@import "./colors.module.scss";
+
+@media (max-width: 930px)
+{
+    h3
+    {
+        margin: 0;
+    }
+}
+
+.nav
+{
+    width: 100%;
+    height: 70px;
+    z-index: 99998;
+    position: fixed;
+    top: 0;
+
+    .nav-items
+    {
+        width: 90%;
+        margin: auto;
+
+        .logo-div
+        {
+            float: left;
+            width: 150px;
+            height: 43px;
+            margin-top: 20px;
+
+            .logo
+            {
+                fill: $blueColor;
+                transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                transition-property: initial;
+                transition-duration: 1s;
+                transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                transition-delay: initial;
+
+                &:hover
+                {
+                    transform: scale(1.4);
+                    fill: $yellowColor;
+                }
+            }
+        }
+
+        .menu
+        {
+            margin-top: 15px;
+            width: 594px;
+            height: auto;
+            position: relative;
+            float: right;
+            background-color: rgba(255, 255, 255, 0.3);
+            transition: 0.5s opacity ease-in-out;
+            @media (max-width: 930px)
+            {
+                padding-right: 10px;
+                padding-top: 5px;
+                width: 150px;
+                height: 255px;
+                clear: both;
+                left: 2%;
+            }
+
+            a
+            {
+                padding-left: 5%;
+                float: left;
+                margin-top: 5px;
+                @media (max-width: 930px)
+                {
+                    padding-left: 0;
+                    padding-right: 5%;
+                    float: none;
+                    text-align: right;
+                }
+
+                &:hover
+                {
+                    transform: scale(1.05);
+                    color: $yellowColor;
+                }
+            }
+        }
+
+        #nav-icon2
+        {
+            position: relative;
+            left: 2%;
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin-top: 20px;
+            padding-left: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            span
+            {
+                display: block;
+                position: absolute;
+                height: 6px;
+                width: 50%;
+                background: $blueColor;
+                opacity: 1;
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transition: .25s ease-in-out;
+                -webkit-transition: .25s ease-in-out;
+                -moz-transition: .25s ease-in-out;
+                -o-transition: .25 ease-in-out;
+
+                &:nth-child(even)
+                {
+                    left: 50%;
+                }
+
+                &:nth-child(odd)
+                {
+                    left: 0;
+                }
+
+                &:nth-child(1),
+                &:nth-child(2)
+                {
+                    top: 0;
+                }
+
+                &:nth-child(3),
+                &:nth-child(4)
+                {
+                    top: 14px;
+                }
+
+                &:nth-child(5),
+                &:nth-child(6)
+                {
+                    top: 28px;
+                }
+            }
+        }
+    }
+
+    .language
+    {
+        border: none;
+        position: relative;
+        top: 17px;
+        left: 3%;
+        font-family: "Bungee", cursive;
+        font-size: 21px;
+        color: $yellowColor;
+        float: right;
+
+        select
+        {
+            padding: 5px 8px;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+
+            textarea
+            {
+                font-family: "Bungee", cursive;
+            }
+        }
+    }
+}
