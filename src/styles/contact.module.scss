@@ -3,13 +3,21 @@
 .conCer
 {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 
     .certificates
     {
-        min-height: 250px;
-        height: 20%;
+        height: 25vh;
         background-image: linear-gradient(180deg, $gradient3Color1, $gradient3Color2, $gradient3Color3);
+        @media (max-width: 700px)
+        {
+            height: 40vh;
+            display: flex;
+        }
+        @media (max-width: 500px)
+        {
+            height: 45vh;
+        }
     
         .certificates-content
         {
@@ -35,30 +43,14 @@
             {
                 padding-top: 11%;
             }
-            @media (max-width: 492px)
+            @media (max-width: 500px)
             {
-                padding-top: 12%;
-            }
-            @media (max-width: 470px)
-            {
-                padding-top: 13%;
-            }
-            @media (max-width: 400px)
-            {
-                padding-top: 15%;
-            }
-            @media (max-width: 326px)
-            {
-                padding-top: 16%;
+                padding: 0;
+                margin-bottom: 2.5vh;
             }
             @media (max-width: 320px)
             {
-                padding-top: 18%;
                 width: 100%;
-            }
-            @media (max-width: 304px)
-            {
-                padding-top: 20%;
             }
     
             .crtr1
@@ -100,9 +92,18 @@
 
     .contact
     {
-        height: 80%;
+        height: 75vh;
         background-image: linear-gradient(180deg, $gradient1Color1, $gradient1Color2);
         overflow: hidden;
+        @media (max-width: 700px)
+        {
+            height: 60vh;
+            display: flex;
+        }
+        @media (max-width: 500px)
+        {
+            height: 55vh;
+        }
 
         .contact-content
         {
@@ -223,7 +224,7 @@
                     }
                     @media (max-width: 424px)
                     {
-                        padding-top: 40px;
+                        padding-top: 30px;
                     }
                     @media (max-width: 400px)
                     {
@@ -236,7 +237,7 @@
                     @media (max-width: 360px)
                     {
                         padding-bottom: 0;
-                        padding-top: 30px;
+                        padding-top: 20px;
                     }
                     @media (max-width: 354px)
                     {
