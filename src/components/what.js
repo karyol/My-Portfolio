@@ -111,19 +111,19 @@ const What = () => {
                         slidesToSlide={ 1 }
                         swipeable
                     >
-                        <PortfolioItem name="Template" url="#home">
+                        <PortfolioItem name="Template" url="/portTemplate">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="#home">
+                        <PortfolioItem name="Template" url="/portTemplate">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="#home">
+                        <PortfolioItem name="Template" url="/portTemplate">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="#home">
+                        <PortfolioItem name="Template" url="/portTemplate">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
                     </Carousel>

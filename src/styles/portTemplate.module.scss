@@ -1,0 +1,116 @@
+@import "./index.module.scss";
+
+html, body
+{
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.scroll-right
+{
+    position: absolute;
+    top: calc(50vh - 53.5px);
+    left: calc(97vw - 50px);
+    transform: rotate(-90deg);
+    width: 50px;
+    height: auto;
+}
+
+.scroll-left
+{
+    position: absolute;
+    top: calc(50vh - 53.5px);
+    left: 103vw;
+    transform: rotate(90deg);
+    width: 50px;
+    height: auto;
+}
+
+.main-port
+{
+    overflow: hidden;
+    display: inline-flex;
+    height: 100vh;
+
+    .navbar
+    {
+        position: fixed;
+        width: 100vw;
+        height: 70px;
+        z-index: 99998;
+        top: 0;
+        justify-content: normal;
+        padding: 2%;
+
+        a
+        {
+            padding-left: 2%;
+            
+            &:hover
+            {
+                transform: scale(1.05);
+                color: $yellowColor;
+            }
+        }
+    }
+
+    .hero
+    {
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(180deg, $gradient1Color1, $gradient1Color2);
+        overflow: hidden;
+
+        .hero-content
+        {
+            width: 80vw;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+
+            .hero-div
+            {
+                margin: auto;
+                height: 80vh;
+                width: 80vw;
+                text-align: center;
+
+                h1
+                {
+                    color: $greyColor;
+                    text-shadow: 1px 1px $yellowColor;
+                    line-height: 1.5;
+                }
+
+                img
+                {
+                    max-width: 80vw;
+                    max-height: 60vh;
+                }
+            }
+        }
+    }
+
+    .description
+    {
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(180deg, $gradient2Color1, $gradient2Color2);
+        overflow: hidden;
+
+        .desc-content
+        {
+            width: 80vw;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+
+            .desc-div
+            {
+                margin: auto;
+                height: 80vh;
+                width: 80vw;
+            }
+        }
+    }
+}
