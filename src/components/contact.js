@@ -24,7 +24,7 @@ const Contact = () => {
                 <div className={ certificatesContent }>
                     <h4 id="crtr1" className={ crtr1 }>My Certificates</h4>
                     <h6 id="crtr2" className={ crtr2 }>Trainings are important to me. If you have a moment please have a look on my certificates gallery.</h6>
-                    <a href="/#contact" target="_blank" rel="noreferrer">
+                    <a href="/certificates" target="_blank" rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-373.2 285.4 904.7 225.3" className={ buttonVisit } id="button-gallery">
                             <polygon points="-253.4 438.6 -253.4 400.7 -304.4 400.7 -304.4 438.6 -309.9 438.6 -309.9 357.3 -304.4 357.3 -304.4 395.2 -253.4 395.2 -253.4 357.3 -248 357.3 -248 438.6 " />
                             <path d="M-174.9 438.6V414h-51.9v24.6h-5.4v-32.5c0-5.4 0.8-10 2.6-14.6l9.2-23.5c2.1-5.3 4.3-10.7 12.3-10.7h14c7.7 0 9.9 5.3 12.2 10.8l9.9 23.3c1.8 4.7 2.6 9.3 2.6 14.7v32.5H-174.9zM-174.9 408.6v-2.4c0-4.6-0.7-8.7-2.2-12.6l-9.9-23.3c-2.2-5.2-3.4-7.5-7.2-7.5h-14c-4.1 0-5.3 2.1-7.3 7.3l-9.2 23.5c-1.4 3.9-2.2 8-2.2 12.6v2.4H-174.9z" />
