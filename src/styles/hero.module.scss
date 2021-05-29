@@ -13,8 +13,12 @@
         width: 100%;
         position: absolute;
         text-align: center;
-        top: 40%;
+        top: 30%;
         z-index: 10;
+        @media (max-height: 750px)
+        {
+            top: 25%;
+        }
 
         .logo-animate
         {
@@ -24,6 +28,7 @@
             fill: white;
             background-repeat: no-repeat;
             margin: auto;
+            margin-bottom: -2%;
             opacity: 0.9;
             background-size: cover;
         }
@@ -35,16 +40,21 @@
     width: 100%;
     z-index: 0;
     position: absolute;
-    left: -5px;
     bottom: 0; 
 
     .hero-background-img
     {
-        background-image: url(../images/wave.png);
+        background-image: url(../images/hero_black.svg);
         background-repeat: no-repeat;
-        background-size: cover;
-        width: calc(100% + 10px);
-        height: 500px;
+        background-position: center;
+        background-size: contain;
+        filter: invert(7%) sepia(75%) saturate(7371%) hue-rotate(359deg) brightness(109%) contrast(96%);
+        width: 100vw;
+        height: 90vh;
         margin: auto; 
+        @media (max-width: 990px)
+        {
+            background-size: cover;
+        }
     }
 }
