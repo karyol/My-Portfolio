@@ -5,6 +5,8 @@ import Home from '../components/home'
 import What from '../components/what'
 import About from '../components/about'
 import Contact from '../components/contact'
+import '../../public/static/locales/en/translation.json'
+import '../../public/static/locales/pl/translation.json'
 
 const IndexPage = () => {
   return (
