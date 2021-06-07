@@ -1,4 +1,8 @@
 import * as React from 'react'
+import i18n from 'i18next';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import styled from 'styled-components';
 import PortfolioItem from './portfolioItem'
 import Carousel from 'react-multi-carousel';
@@ -11,6 +15,23 @@ import {
     whatContent,
     port
 } from '../styles/what.module.scss'
+
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['en', 'pl'],
+    fallbackLng: 'en',
+    detection: {
+        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    backend: {
+        loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+    react: { useSuspense: false },
+  });
 
 const CustomLeftArrow = styled.i`
     position: absolute !important;
@@ -45,23 +66,25 @@ const CustomRightArrow = styled.i`
 `;
 
 const What = () => {
+    const { t } = useTranslation();
+
     return (
         <section id="what" className={ what }>
             <div className={ whatContent }>
                 <div>
                     <h2>
-                        <span id="wtr1">I hand craft Web Applications</span>
+                        <span id="wtr1">{t('wtr1')}</span>
                         <br />
-                        <span id="wtr11">and Desktop Applications</span>
+                        <span id="wtr11">{t('wtr11')}</span>
                     </h2>
                 </div>
 
                 <div>
-                    <p id="wtr2">I can prepare a design for your application then turn it into working application.</p>
+                    <p id="wtr2">{t('wtr2')}</p>
                 </div>
 
                 <div>
-                    <h3 id="wtr3">My portfolio</h3>
+                    <h3 id="wtr3">{t('wtr3')}</h3>
                     <Carousel 
                         additionalTransfrom={ 0 }
                         arrows
@@ -111,26 +134,26 @@ const What = () => {
                         slidesToSlide={ 1 }
                         swipeable
                     >
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name={t('portItem1')} url="/myPortfolio#hero">
+                            {t('portItem1Desc')}
+                        </PortfolioItem>
+
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                        </PortfolioItem>
-
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
                     </Carousel>
                 </div>
 
                 <div>
-                    <a href="#about" title="About me" id="scroll-about">
+                    <a href="#about" title={t('scrollAbout')} id="scroll-about">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" className={ scrollSvg }>
                             <path d="M40.5 81C18.2 81 0 62.8 0 40.5S18.2 0 40.5 0C62.8 0 81 18.2 81 40.5S62.8 81 40.5 81zM40.5 1C18.7 1 1 18.7 1 40.5S18.7 80 40.5 80 80 62.3 80 40.5 62.3 1 40.5 1z" />
                             <path d="M48.7 48h-8.3V23h-1v25h-7.1c-0.6 0-1 0.3-0.7 0.7l8.2 8.7c0.3 0.3 1.1 0.3 1.4 0l8.2-8.7C49.7 48.3 49.3 48 48.7 48z" />

@@ -1,6 +1,11 @@
 import * as React from 'react'
+import Cookies from 'js-cookie'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import i18n from 'i18next';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import { 
     nav,
     navItems,
@@ -11,12 +16,30 @@ import {
     language
 } from '../styles/navbar.module.scss'
 
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['en', 'pl'],
+    fallbackLng: 'en',
+    detection: {
+        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    backend: {
+        loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+    react: { useSuspense: false },
+  });
+
 const MenuDiv = styled.div`
     opacity: ${({ showNav }) => showNav ? 1 : 0 };
     display: ${({ dispNav }) => dispNav ? 'block' : 'none' };
 `;
 
 const Navbar = () => {
+    const { t } = useTranslation();
     const[show, showMenu] = React.useState(false);
     const[disp, dispMenu] = React.useState(false);
 
@@ -38,6 +61,11 @@ const Navbar = () => {
         }
     }
 
+    function changeLang(e)
+    {
+        i18n.changeLanguage(e.target.value);
+    }
+
     return (
         <nav className={ nav }>
             <section className={ navItems }>
@@ -46,7 +74,7 @@ const Navbar = () => {
                 </Link>
 
                 <section id="language" className={ language }>
-                    <select>
+                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
                         <option value="en">EN</option>
                         <option value="pl">PL</option>
                     </select>
@@ -58,19 +86,19 @@ const Navbar = () => {
                 
                 <MenuDiv className={ menu } showNav={ show } dispNav={ disp }>
                     <Link to="/#home">
-                        <h3 id="mtr4">Home</h3>
+                        <h3>{t('home')}</h3>
                     </Link>
                     
                     <Link to="/#what">
-                        <h3 id="mtr3">What I do</h3>
+                        <h3>{t('what')}</h3>
                     </Link>
 
                     <Link to="/#about">
-                        <h3 id="mtr2">About me</h3>
+                        <h3>{t('about')}</h3>
                     </Link>
 
                     <Link to="/#contact">
-                        <h3 id="mtr1">Contact</h3> 
+                        <h3>{t('contact')}</h3> 
                     </Link>
                 </MenuDiv>
             </section>

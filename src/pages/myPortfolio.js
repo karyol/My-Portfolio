@@ -16,12 +16,16 @@ import {
     navbar,
     scrollRight,
     scrollLeft,
-    language
+    language,
+    githubIcon
 } from '../styles/portTemplate.module.scss'
 import {
     scrollSvg
 } from '../styles/index.module.scss'
-import Screen from '../images/screen.png'
+import ScreenPL from '../images/portfolioImagePl.jpg'
+import ScreenEN from '../images/portfolioImageEn.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 i18n
   .use(initReactI18next)
@@ -55,7 +59,7 @@ const ScrollToHero = styled.div`
     display: ${({ dispScrHero }) => dispScrHero ? 'block' : 'none' };
 `;
 
-const PortTemplate = () => {
+const MyPortfolio = () => {
     const[dispD, dispScrToDesc] = React.useState(window.location.href.split('#')[1] === 'hero' ? true : false);
     const[dispH, dispScrToHero] = React.useState(window.location.href.split('#')[1] === 'description' ? true : false);
     const { t } = useTranslation();
@@ -81,7 +85,7 @@ const PortTemplate = () => {
     return (
         <main className={ mainPort }>
             <GlobalStyle />
-            <title>Portfolio Template</title>
+            <title>{t('portItem1')}</title>
             <nav className={ navbar }>
                 <a href="#hero">
                     <h3>{t('home')}</h3>
@@ -102,13 +106,18 @@ const PortTemplate = () => {
             <section id="hero" className={ hero }>
                 <div className={ heroContent }>
                     <div className={ heroDiv }>
-                        <h1>{t('portItem1')}</h1>
-                        <img src={ Screen } alt="Screenshot" />
+                        <h1>
+                            {t('portItem1')}
+                            <a href="https://github.com/karyol/My-Portfolio" target="_blank" rel="noreferrer">
+                                <FontAwesomeIcon className={ githubIcon } icon={ faGithub }/>
+                            </a>
+                        </h1>
+                        <img src={ Cookies.get('i18next') === 'pl' ? ScreenPL : ScreenEN } alt="Screenshot" />
                     </div>
                 </div>
 
                 <ScrollToDesc className={ scrollRight } dispScrDesc={ dispD }>
-                    <a href="#description" title="Description">
+                    <a href="#description" title={t('description')}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" className={ scrollSvg }>
                             <path d="M40.5 81C18.2 81 0 62.8 0 40.5S18.2 0 40.5 0C62.8 0 81 18.2 81 40.5S62.8 81 40.5 81zM40.5 1C18.7 1 1 18.7 1 40.5S18.7 80 40.5 80 80 62.3 80 40.5 62.3 1 40.5 1z" />
                             <path d="M48.7 48h-8.3V23h-1v25h-7.1c-0.6 0-1 0.3-0.7 0.7l8.2 8.7c0.3 0.3 1.1 0.3 1.4 0l8.2-8.7C49.7 48.3 49.3 48 48.7 48z" />
@@ -120,12 +129,25 @@ const PortTemplate = () => {
             <section id="description" className={ description }>
                 <div className={ descContent }>
                     <div className={ descDiv }>
-                        <p>Sample text</p>
+                        <p>{t('myPortDesc1')}</p>
+                        <p>
+                            {t('myPortDesc11')}
+                            <a href="https://www.gatsbyjs.com/docs/" target="_blank" rel="noreferrer">GatsbyJS</a>
+                            {t('myPortDesc12')}
+                            <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noreferrer">ReactJS</a>
+                            {t('myPortDesc13')}
+                        </p>
+                        <p>{t('myPortDesc2')}</p>
+                        <p>{t('myPortDesc3')}</p>
+                        <p>
+                            {t('myPortDesc4')}
+                            <a href="https://github.com/karyol/My-Portfolio" target="_blank" rel="noreferrer">GitHub.</a>
+                        </p>
                     </div>
                 </div>
 
                 <ScrollToHero className={ scrollLeft } dispScrHero={ dispH }>
-                    <a href="#hero" title="Hero">
+                    <a href="#hero" title={t('home')}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" className={ scrollSvg }>
                             <path d="M40.5 81C18.2 81 0 62.8 0 40.5S18.2 0 40.5 0C62.8 0 81 18.2 81 40.5S62.8 81 40.5 81zM40.5 1C18.7 1 1 18.7 1 40.5S18.7 80 40.5 80 80 62.3 80 40.5 62.3 1 40.5 1z" />
                             <path d="M48.7 48h-8.3V23h-1v25h-7.1c-0.6 0-1 0.3-0.7 0.7l8.2 8.7c0.3 0.3 1.1 0.3 1.4 0l8.2-8.7C49.7 48.3 49.3 48 48.7 48z" />
@@ -137,4 +159,4 @@ const PortTemplate = () => {
     )
 }
 
-export default PortTemplate
+export default MyPortfolio

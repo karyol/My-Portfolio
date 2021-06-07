@@ -14,16 +14,24 @@ html, body
     transform: rotate(-90deg);
     width: 50px;
     height: auto;
+    @media (max-width: 740px)
+    {
+        display: none !important;
+    }
 }
 
 .scroll-left
 {
     position: absolute;
     top: calc(50vh - 53.5px);
-    left: 103vw;
+    left: 3vw;
     transform: rotate(90deg);
     width: 50px;
     height: auto;
+    @media (max-width: 740px)
+    {
+        display: none !important;
+    }
 }
 
 .main-port
@@ -52,6 +60,34 @@ html, body
                 color: $yellowColor;
             }
         }
+
+        .language
+        {
+            border: none;
+            position: fixed;
+            padding-top: 2%;
+            right: 3%;
+            font-family: "Bungee", cursive;
+            font-size: 21px;
+
+            select
+            {
+                padding: 5px 8px;
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                cursor: pointer;
+                color: black;
+
+                textarea
+                {
+                    font-family: "Bungee", cursive;
+                }
+            }
+        }
     }
 
     .hero
@@ -74,18 +110,34 @@ html, body
                 height: 80vh;
                 width: 80vw;
                 text-align: center;
+                overflow: hidden;
 
                 h1
                 {
                     color: $greyColor;
                     text-shadow: 1px 1px $yellowColor;
                     line-height: 1.5;
+                    width: 100%;
                 }
 
                 img
                 {
-                    max-width: 80vw;
-                    max-height: 60vh;
+                    width: 80%;
+                }
+
+                .github-icon
+                {
+                    color: $greyColor;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 1s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
@@ -97,18 +149,19 @@ html, body
         width: 100vw;
         background-image: linear-gradient(180deg, $gradient2Color1, $gradient2Color2);
         overflow: hidden;
+        display: flex;
 
         .desc-content
         {
             width: 80vw;
-            height: 100vh;
+            height: 70vh;
             margin: auto;
             display: flex;
+            overflow: scroll;
 
             .desc-div
             {
                 margin: auto;
-                height: 80vh;
                 width: 80vw;
             }
         }

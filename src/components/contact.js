@@ -1,4 +1,8 @@
 import * as React from 'react'
+import i18n from 'i18next';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import {
     conCer,
     certificates,
@@ -17,13 +21,32 @@ import {
     contactImg
 } from '../styles/contact.module.scss'
 
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['en', 'pl'],
+    fallbackLng: 'en',
+    detection: {
+        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    backend: {
+        loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+    react: { useSuspense: false },
+  });
+
 const Contact = () => {
+    const { t } = useTranslation();
+
     return (
         <section className={ conCer } id="contact">
             <section className={ certificates }>
                 <div className={ certificatesContent }>
-                    <h4 id="crtr1" className={ crtr1 }>My Certificates</h4>
-                    <h6 id="crtr2" className={ crtr2 }>Trainings are important to me. If you have a moment please have a look on my certificates gallery.</h6>
+                    <h4 className={ crtr1 }>{t('crtr1')}</h4>
+                    <h6 className={ crtr2 }>{t('crtr2')}</h6>
                     <a href="/certificates" target="_blank" rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-373.2 285.4 904.7 225.3" className={ buttonVisit } id="button-gallery">
                             <polygon points="-253.4 438.6 -253.4 400.7 -304.4 400.7 -304.4 438.6 -309.9 438.6 -309.9 357.3 -304.4 357.3 -304.4 395.2 -253.4 395.2 -253.4 357.3 -248 357.3 -248 438.6 " />
@@ -45,7 +68,7 @@ const Contact = () => {
                 <div className={ contactContent }>
                     <div className={ contactPnlRight }>
                         <div className={ slideInTop }>
-                            <h3 id="ctr1">If you need a developer for your project you can drop me an email.</h3>
+                            <h3>{t('ctr1')}</h3>
 
                             <a href="mailto:karyol@o2.pl">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-445.2 288.7 865.4 225.3" className={ buttonVisit }>
