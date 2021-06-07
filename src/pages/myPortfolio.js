@@ -39,7 +39,10 @@ i18n
         caches: ['cookie'],
     },
     backend: {
-        loadPath: '/assets/locales/{{lng}}/translation.json',
+        loadPath: () => {
+            const host = window.location.href.split('/')[2];
+            return (host === 'localhost:8000' ? '':'/static/app') + '/static/locales/{{lng}}/translation.json';
+        }
     },
     react: { useSuspense: false },
   });
