@@ -1,4 +1,8 @@
 import * as React from 'react'
+import i18n from 'i18next';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import {
     about,
     aboutContent,
@@ -22,9 +26,28 @@ import {
 import {
     scrollSvg
 } from '../styles/index.module.scss'
-import Me from '../images/me.png'
+import Me from '../images/Karol.jpg'
+
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['en', 'pl'],
+    fallbackLng: 'en',
+    detection: {
+        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    backend: {
+        loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+    react: { useSuspense: false },
+  });
 
 const About = () => {
+    const { t } = useTranslation();
+
     return (
         <section id="about" className={ about }>
             <div className={ aboutContent }>
@@ -34,21 +57,21 @@ const About = () => {
                     </div>
 
                     <div className={ descText }>
-                        <h2 id="atr1">My name is Karol Jasek</h2>
-                        <p id="atr2">But I preffer to be called Baron.</p>
+                        <h2>{t('atr1')}</h2>
+                        <p>{t('atr2')}</p>
                         <p>
-                            <span id="atr3">I have been studying since 2019 but I am learning Web and Desktop Development since 2014.</span>
+                            <span>{t('atr3')}</span>
                             <br />
-                            <span id="atr31">Most of my projects so far I have done for learning, not only at school but also just for myself.</span>
+                            <span>{t('atr31')}</span>
                         </p>
-                        <p id="atr4">Apart from computer science, my passion is the history of the Second World War.</p>
+                        <p>{t('atr4')}</p>
                     </div>
                 </div>
 
                 <div className={ technologies }>
                     <div>
                         <div>
-                            <h3 id="atr5">Technologies I use</h3>
+                            <h3>{t('atr5')}</h3>
                         </div>
 
                         <div className={ techItem } title="Html 5">
@@ -134,7 +157,7 @@ const About = () => {
                 </div>
 
                 <div>
-                    <a href="#contact" title="Contact" id="scroll-contact">
+                    <a href="#contact" title={t('scrollContact')} id="scroll-contact">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" className={ scrollSvg }>
                             <path d="M40.5 81C18.2 81 0 62.8 0 40.5S18.2 0 40.5 0C62.8 0 81 18.2 81 40.5S62.8 81 40.5 81zM40.5 1C18.7 1 1 18.7 1 40.5S18.7 80 40.5 80 80 62.3 80 40.5 62.3 1 40.5 1z" />
                             <path d="M48.7 48h-8.3V23h-1v25h-7.1c-0.6 0-1 0.3-0.7 0.7l8.2 8.7c0.3 0.3 1.1 0.3 1.4 0l8.2-8.7C49.7 48.3 49.3 48 48.7 48z" />
