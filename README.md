@@ -1,54 +1,18 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby minimal starter
+  Baron Portfolio
 </h1>
 
-## 🚀 Quick start
+## Used technologies
 
-1.  **Create a Gatsby site.**
+1.  [**NodeJS**](https://nodejs.org/en/docs/)
+2.  [**GatsbyJS**](https://www.gatsbyjs.com/docs/)
+3.  [**ReactJS**](https://reactjs.org/docs/getting-started.html)
+4.  Additional libraries for Gatsby and React e.g.:
+    * [**Font Awesome**](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) for GitHub icon
+    * [**i18next**](https://www.i18next.com) for easier translations.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+## Description
+I prepared this project myself. My portfolio was initially made as a project for studies, then i decided to move my design to some framework, fix all bugs and add some features, to use it as my personal portfolio.<br/>
+Graphics visible in the background of the start section, graphics of the contact section and graphics presenting the technologies I use have been shared by the authors under a public license.<br/>
+The other graphics, i.e. the logo visible in the upper left corner and button graphics, were created by myself using Inkscape.<br/>
+The code of this project is public, so everyone can copy it and use for their own projects. The use of this design for commercial purposes is not allowed.
