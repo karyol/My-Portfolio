@@ -60,11 +60,10 @@ const ScrollToHero = styled.div`
 `;
 
 const MyPortfolio = () => {
-    const[dispD, dispScrToDesc] = React.useState(window.location.href.split('#')[1] === 'hero' ? true : false);
-    const[dispH, dispScrToHero] = React.useState(window.location.href.split('#')[1] === 'description' ? true : false);
     const { t } = useTranslation();
-
-    window.addEventListener('popstate', () => {
+    const[dispD, dispScrToDesc] = React.useState(true);
+    const[dispH, dispScrToHero] = React.useState(false);
+    React.useEffect(() => {
         if(window.location.href.split('#')[1] === 'hero')
         {
             dispScrToDesc(true);
@@ -75,6 +74,19 @@ const MyPortfolio = () => {
             dispScrToDesc(false);
             dispScrToHero(true);
         }
+
+        window.addEventListener('popstate', () => {
+            if(window.location.href.split('#')[1] === 'hero')
+            {
+                dispScrToDesc(true);
+                dispScrToHero(false);
+            }
+            else if(window.location.href.split('#')[1] === 'description')
+            {
+                dispScrToDesc(false);
+                dispScrToHero(true);
+            }
+        });
     });
 
     function changeLang(e)
