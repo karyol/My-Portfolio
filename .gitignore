@@ -1,7 +1,3 @@
 node_modules/
 .cache/
-public/icons
-public/page-data
-public/favicon-32x32.png
-public/manifest.webmanifest
-public/render*
+public/

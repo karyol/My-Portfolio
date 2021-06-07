@@ -3,9 +3,7 @@ import Cookies from 'js-cookie'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+import { useTranslation } from 'react-i18next';
 import { 
     nav,
     navItems,
@@ -15,23 +13,6 @@ import {
     navIcon2,
     language
 } from '../styles/navbar.module.scss'
-
-i18n
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .use(HttpApi)
-  .init({
-    supportedLngs: ['en', 'pl'],
-    fallbackLng: 'en',
-    detection: {
-        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
-        caches: ['cookie'],
-    },
-    backend: {
-        loadPath: '/static/locales/{{lng}}/translation.json',
-    },
-    react: { useSuspense: false },
-  });
 
 const MenuDiv = styled.div`
     opacity: ${({ showNav }) => showNav ? 1 : 0 };
