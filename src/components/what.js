@@ -134,19 +134,19 @@ const What = () => {
                         slidesToSlide={ 1 }
                         swipeable
                     >
-                        <PortfolioItem name={t('portItem1')} url="/portTemplate">
+                        <PortfolioItem name={t('portItem1')} url="/myPortfolio#hero">
                             {t('portItem1Desc')}
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate">
+                        <PortfolioItem name="Template" url="/portTemplate#hero">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </PortfolioItem>
                     </Carousel>

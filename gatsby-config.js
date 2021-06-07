@@ -6,6 +6,7 @@ module.exports = {
     "gatsby-plugin-sass", 
     "gatsby-plugin-gatsby-cloud", 
     "gatsby-plugin-styled-components",
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
