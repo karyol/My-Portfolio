@@ -1,5 +1,10 @@
 import * as React from 'react'
+import Cookies from 'js-cookie'
 import styled, { createGlobalStyle } from 'styled-components';
+import i18n from 'i18next';
+import { useTranslation, initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import {
     mainPort,
     hero,
@@ -10,12 +15,30 @@ import {
     descDiv,
     navbar,
     scrollRight,
-    scrollLeft
+    scrollLeft,
+    language
 } from '../styles/portTemplate.module.scss'
 import {
     scrollSvg
 } from '../styles/index.module.scss'
 import Screen from '../images/screen.png'
+
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['en', 'pl'],
+    fallbackLng: 'en',
+    detection: {
+        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    backend: {
+        loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+    react: { useSuspense: false },
+  });
 
 const GlobalStyle = createGlobalStyle`
     html, body
@@ -33,22 +56,27 @@ const ScrollToHero = styled.div`
 `;
 
 const PortTemplate = () => {
-    const[dispD, dispScrToDesc] = React.useState(true);
-    const[dispH, dispScrToHero] = React.useState(false);
+    const[dispD, dispScrToDesc] = React.useState(window.location.href.split('#')[1] === 'hero' ? true : false);
+    const[dispH, dispScrToHero] = React.useState(window.location.href.split('#')[1] === 'description' ? true : false);
+    const { t } = useTranslation();
 
-    var loc = 'http://localhost:8000/portTemplate/';
     window.addEventListener('popstate', () => {
-        if(window.location.href === loc + '#hero')
+        if(window.location.href.split('#')[1] === 'hero')
         {
             dispScrToDesc(true);
             dispScrToHero(false);
         }
-        else if(window.location.href === loc + '#description')
+        else if(window.location.href.split('#')[1] === 'description')
         {
             dispScrToDesc(false);
             dispScrToHero(true);
         }
     });
+
+    function changeLang(e)
+    {
+        i18n.changeLanguage(e.target.value);
+    }
 
     return (
         <main className={ mainPort }>
@@ -56,18 +84,25 @@ const PortTemplate = () => {
             <title>Portfolio Template</title>
             <nav className={ navbar }>
                 <a href="#hero">
-                    <h3>Home</h3>
+                    <h3>{t('home')}</h3>
                 </a>
 
                 <a href="#description">
-                    <h3>Description</h3>
+                    <h3>{t('description')}</h3>
                 </a>
+
+                <section id="language" className={ language }>
+                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
+                        <option value="en">EN</option>
+                        <option value="pl">PL</option>
+                    </select>
+                </section>
             </nav>
 
             <section id="hero" className={ hero }>
                 <div className={ heroContent }>
                     <div className={ heroDiv }>
-                        <h1>Template</h1>
+                        <h1>{t('portItem1')}</h1>
                         <img src={ Screen } alt="Screenshot" />
                     </div>
                 </div>
