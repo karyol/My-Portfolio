@@ -24,6 +24,10 @@ const Navbar = () => {
     const[show, showMenu] = React.useState(false);
     const[disp, dispMenu] = React.useState(false);
 
+    React.useEffect(() => {
+        document.getElementById('language').value = Cookies.get('i18next');
+    });
+
     function toggleMenu()
     {
         if(show !== true)

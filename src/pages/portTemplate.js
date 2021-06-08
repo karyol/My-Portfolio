@@ -59,7 +59,10 @@ const PortTemplate = () => {
     const { t } = useTranslation();
     const[dispD, dispScrToDesc] = React.useState(true);
     const[dispH, dispScrToHero] = React.useState(false);
+
     React.useEffect(() => {
+        document.getElementById('language').value = Cookies.get('i18next');
+        
         if(window.location.href.split('#')[1] === 'hero')
         {
             dispScrToDesc(true);

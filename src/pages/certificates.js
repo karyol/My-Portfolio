@@ -35,6 +35,10 @@ i18n
 const Certificates = () => {
     const { t } = useTranslation();
 
+    React.useEffect(() => {
+        document.getElementById('language').value = Cookies.get('i18next');
+    });
+
     function changeLang(e)
     {
         i18n.changeLanguage(e.target.value);
