@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import Cookies from 'js-cookie'
 import styled, { createGlobalStyle } from 'styled-components';
 import i18n from 'i18next';
@@ -41,7 +41,6 @@ i18n
     backend: {
         loadPath: '/locales/{{lng}}/translation.json'
     },
-    react: { useSuspense: false },
   });
 
 const GlobalStyle = createGlobalStyle`
@@ -59,7 +58,21 @@ const ScrollToHero = styled.div`
     display: ${({ dispScrHero }) => dispScrHero ? 'block' : 'none' };
 `;
 
-const MyPortfolio = () => {
+const loadingMarkup = (
+    <div style={{ 
+        textAlign: "center",
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        backgroundImage: "linear-gradient(180deg, #e4815d, #fca959)"
+    }}>
+        <h2 style={{ 
+            margin: "auto"
+        }}>Loading...</h2>
+    </div>
+);
+
+const MyPortfolio1 = () => {
     const { t } = useTranslation();
     const[dispD, dispScrToDesc] = React.useState(true);
     const[dispH, dispScrToHero] = React.useState(false);
@@ -176,5 +189,13 @@ const MyPortfolio = () => {
         </main>
     )
 }
+
+const MyPortfolio = () => {
+    return (
+        <Suspense fallback={ loadingMarkup }>
+            <MyPortfolio1></MyPortfolio1>
+        </Suspense>
+    )
+};
 
 export default MyPortfolio

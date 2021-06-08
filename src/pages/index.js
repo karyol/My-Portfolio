@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -23,21 +23,36 @@ i18n
     },
     backend: {
         loadPath: '/locales/{{lng}}/translation.json',
-    },
-    react: { useSuspense: false },
+    }
   });
+
+const loadingMarkup = (
+  <div style={{ 
+    textAlign: "center",
+    display: "flex",
+    height: "100vh",
+    width: "100vw",
+    backgroundImage: "linear-gradient(180deg, #e4815d, #fca959)"
+  }}>
+    <h2 style={{ 
+        margin: "auto"
+      }}>Loading...</h2>
+  </div>
+);
 
 const IndexPage = () => {
   return (
-    <main>
-      <title>Baron Portfolio</title>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <Home></Home>
-      <What></What>
-      <About></About>
-      <Contact></Contact>
-    </main>
+    <Suspense fallback={ loadingMarkup }>
+      <main>
+        <title>Baron Portfolio</title>
+        <Navbar></Navbar>
+        <Hero></Hero>
+        <Home></Home>
+        <What></What>
+        <About></About>
+        <Contact></Contact>
+      </main>
+    </Suspense>
   )
 }
 
