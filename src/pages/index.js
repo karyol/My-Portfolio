@@ -41,18 +41,24 @@ const loadingMarkup = (
 );
 
 const IndexPage = () => {
+  const isSSR = typeof window === "undefined";
+
   return (
-    <Suspense fallback={ loadingMarkup }>
-      <main>
-        <title>Baron Portfolio</title>
-        <Navbar></Navbar>
-        <Hero></Hero>
-        <Home></Home>
-        <What></What>
-        <About></About>
-        <Contact></Contact>
-      </main>
-    </Suspense>
+    <>
+      {!isSSR && (
+        <Suspense fallback={ loadingMarkup }>
+          <main>
+            <title>Baron Portfolio</title>
+            <Navbar></Navbar>
+            <Hero></Hero>
+            <Home></Home>
+            <What></What>
+            <About></About>
+            <Contact></Contact>
+          </main>
+        </Suspense>
+      )}
+    </>
   )
 }
 
