@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import Cookies from 'js-cookie'
 import styled, { createGlobalStyle } from 'styled-components';
 import i18n from 'i18next';
@@ -37,7 +37,6 @@ i18n
     backend: {
         loadPath: '/assets/locales/{{lng}}/translation.json',
     },
-    react: { useSuspense: false },
   });
 
 const GlobalStyle = createGlobalStyle`
@@ -55,12 +54,31 @@ const ScrollToHero = styled.div`
     display: ${({ dispScrHero }) => dispScrHero ? 'block' : 'none' };
 `;
 
-const PortTemplate = () => {
-    const[dispD, dispScrToDesc] = React.useState(window.location.href.split('#')[1] === 'hero' ? true : false);
-    const[dispH, dispScrToHero] = React.useState(window.location.href.split('#')[1] === 'description' ? true : false);
-    const { t } = useTranslation();
+const loadingMarkup = (
+    <div style={{ 
+        textAlign: "center",
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        backgroundImage: "linear-gradient(180deg, #e4815d, #fca959)"
+    }}>
+        <h2 style={{ 
+            margin: "auto"
+        }}>Loading...</h2>
+    </div>
+);
 
-    window.addEventListener('popstate', () => {
+const PortTemplate1 = () => {
+    const { t } = useTranslation();
+    const[dispD, dispScrToDesc] = React.useState(true);
+    const[dispH, dispScrToHero] = React.useState(false);
+
+    React.useEffect(() => {
+        if(document.readyState === 'complete')
+        {
+            document.getElementById('languageSelect').value = Cookies.get('i18next');
+        }
+
         if(window.location.href.split('#')[1] === 'hero')
         {
             dispScrToDesc(true);
@@ -71,6 +89,19 @@ const PortTemplate = () => {
             dispScrToDesc(false);
             dispScrToHero(true);
         }
+
+        window.addEventListener('popstate', () => {
+            if(window.location.href.split('#')[1] === 'hero')
+            {
+                dispScrToDesc(true);
+                dispScrToHero(false);
+            }
+            else if(window.location.href.split('#')[1] === 'description')
+            {
+                dispScrToDesc(false);
+                dispScrToHero(true);
+            }
+        });
     });
 
     function changeLang(e)
@@ -92,7 +123,7 @@ const PortTemplate = () => {
                 </a>
 
                 <section id="language" className={ language }>
-                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
+                    <select id="languageSelect" onChange={ changeLang }>
                         <option value="en">EN</option>
                         <option value="pl">PL</option>
                     </select>
@@ -136,5 +167,13 @@ const PortTemplate = () => {
         </main>
     )
 }
+
+const PortTemplate = () => {
+    return (
+        <Suspense fallback={ loadingMarkup }>
+            <PortTemplate1></PortTemplate1>
+        </Suspense>
+    )
+};
 
 export default PortTemplate

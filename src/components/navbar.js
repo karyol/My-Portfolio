@@ -3,9 +3,7 @@ import Cookies from 'js-cookie'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+import { useTranslation } from 'react-i18next';
 import { 
     nav,
     navItems,
@@ -16,23 +14,6 @@ import {
     language
 } from '../styles/navbar.module.scss'
 
-i18n
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .use(HttpApi)
-  .init({
-    supportedLngs: ['en', 'pl'],
-    fallbackLng: 'en',
-    detection: {
-        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
-        caches: ['cookie'],
-    },
-    backend: {
-        loadPath: '/assets/locales/{{lng}}/translation.json',
-    },
-    react: { useSuspense: false },
-  });
-
 const MenuDiv = styled.div`
     opacity: ${({ showNav }) => showNav ? 1 : 0 };
     display: ${({ dispNav }) => dispNav ? 'block' : 'none' };
@@ -42,6 +23,13 @@ const Navbar = () => {
     const { t } = useTranslation();
     const[show, showMenu] = React.useState(false);
     const[disp, dispMenu] = React.useState(false);
+
+    React.useEffect(() => {
+        if(document.readyState === 'complete')
+        {
+            document.getElementById('languageSelect').value = Cookies.get('i18next');
+        }
+    });
 
     function toggleMenu()
     {
@@ -74,7 +62,7 @@ const Navbar = () => {
                 </Link>
 
                 <section id="language" className={ language }>
-                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
+                    <select id="languageSelect" onChange={ changeLang }>
                         <option value="en">EN</option>
                         <option value="pl">PL</option>
                     </select>

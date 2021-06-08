@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import Cookies from 'js-cookie'
 import Certificate from '../components/certificate'
 import i18n from 'i18next';
@@ -27,13 +27,34 @@ i18n
         caches: ['cookie'],
     },
     backend: {
-        loadPath: '/assets/locales/{{lng}}/translation.json',
-    },
-    react: { useSuspense: false },
+        loadPath: '/locales/{{lng}}/translation.json',
+    }
   });
 
-const Certificates = () => {
+const loadingMarkup = (
+    <div style={{ 
+        textAlign: "center",
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        backgroundImage: "linear-gradient(180deg, #0F2027, #203A43, #2C5364)"
+    }}>
+        <h2 style={{ 
+            margin: "auto",
+            color: "white"
+        }}>Loading...</h2>
+    </div>
+);
+
+const Certificates1 = () => {
     const { t } = useTranslation();
+
+    React.useEffect(() => {
+        if(document.readyState === 'complete')
+        {
+            document.getElementById('languageSelect').value = Cookies.get('i18next');
+        }
+    });
 
     function changeLang(e)
     {
@@ -45,7 +66,7 @@ const Certificates = () => {
             <title>Baron Certificates</title>
             <section className={ certificatesSection }>
                 <section id="language" className={ language }>
-                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
+                    <select id="languageSelect" onChange={ changeLang }>
                         <option value="en">EN</option>
                         <option value="pl">PL</option>
                     </select>
@@ -88,6 +109,14 @@ const Certificates = () => {
                 </div>
             </section>
         </main>
+    )
+}
+
+const Certificates = () => {
+    return (
+        <Suspense fallback={ loadingMarkup }>
+            <Certificates1></Certificates1>
+        </Suspense>
     )
 }
 

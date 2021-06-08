@@ -1,8 +1,5 @@
 import * as React from 'react'
-import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+import { useTranslation } from 'react-i18next';
 import {
     about,
     aboutContent,
@@ -27,23 +24,6 @@ import {
     scrollSvg
 } from '../styles/index.module.scss'
 import Me from '../images/Karol.jpg'
-
-i18n
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .use(HttpApi)
-  .init({
-    supportedLngs: ['en', 'pl'],
-    fallbackLng: 'en',
-    detection: {
-        order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomain'],
-        caches: ['cookie'],
-    },
-    backend: {
-        loadPath: '/assets/locales/{{lng}}/translation.json',
-    },
-    react: { useSuspense: false },
-  });
 
 const About = () => {
     const { t } = useTranslation();
