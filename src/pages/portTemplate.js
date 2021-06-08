@@ -17,10 +17,17 @@ const loadingMarkup = (
 );
 
 const PortTemplate = () => {
+    const isSSR = typeof window === "undefined";
+
     return (
-        <Suspense fallback={ loadingMarkup }>
-            <PortTemplateComp />
-        </Suspense>
+        <>
+            {!isSSR && (
+                <Suspense fallback={ loadingMarkup }>
+                    <PortTemplateComp />
+                </Suspense>
+            )}
+        </>
+        
     )
 };
 

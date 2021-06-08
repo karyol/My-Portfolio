@@ -18,10 +18,16 @@ const loadingMarkup = (
 );
 
 const Certificates = () => {
+    const isSSR = typeof window === "undefined";
+
     return (
-        <Suspense fallback={ loadingMarkup }>
-            <CertificatesComp />
-        </Suspense>
+        <>
+            {!isSSR && (
+                <Suspense fallback={ loadingMarkup }>
+                    <CertificatesComp />
+                </Suspense>
+            )}
+        </>
     )
 }
 

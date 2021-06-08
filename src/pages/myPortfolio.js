@@ -17,10 +17,16 @@ const loadingMarkup = (
 );
 
 const MyPortfolio = () => {
+    const isSSR = typeof window === "undefined";
+
     return (
-        <Suspense fallback={ loadingMarkup }>
-            <MyPortfolioComp />
-        </Suspense>
+        <>
+            {!isSSR && (
+                <Suspense fallback={ loadingMarkup }>
+                    <MyPortfolioComp />
+                </Suspense>
+            )}
+        </>
     )
 };
 
