@@ -61,8 +61,11 @@ const PortTemplate = () => {
     const[dispH, dispScrToHero] = React.useState(false);
 
     React.useEffect(() => {
-        document.getElementById('language').value = Cookies.get('i18next');
-        
+        if(document.readyState === 'complete')
+        {
+            document.getElementById('languageSelect').value = Cookies.get('i18next');
+        }
+
         if(window.location.href.split('#')[1] === 'hero')
         {
             dispScrToDesc(true);
@@ -107,7 +110,7 @@ const PortTemplate = () => {
                 </a>
 
                 <section id="language" className={ language }>
-                    <select onChange={ changeLang } defaultValue={ Cookies.get('i18next') }>
+                    <select id="languageSelect" onChange={ changeLang }>
                         <option value="en">EN</option>
                         <option value="pl">PL</option>
                     </select>
