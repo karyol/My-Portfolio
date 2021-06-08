@@ -27,7 +27,9 @@ const Navbar = () => {
     React.useEffect(() => {
         if(document.readyState === 'complete')
         {
+            console.log(Cookies.get('i18next'));
             document.getElementById('languageSelect').value = Cookies.get('i18next');
+            console.log(document.getElementById('languageSelect').value);
         }
     });
 
