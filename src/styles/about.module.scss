@@ -280,6 +280,72 @@
                         }
                     }
                 }
+
+                .icon-php
+                {
+                    fill: #e69a00;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+                    height: 110px;
+                    width: auto;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #787CB5;
+                        }
+                    }
+                }
+
+                .icon-laravel
+                {
+                    fill: #e69a00;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+                    height: 110px;
+                    width: auto;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: #FF2D20;
+                        }
+                    }
+                }
+
+                .icon-ajax
+                {
+                    fill: #e69a00;
+                    transition: 0.6s cubic-bezier(1, 0, 0, 1);
+                    transition-property: initial;
+                    transition-duration: 0.6s;
+                    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+                    transition-delay: initial;
+                    height: 110px;
+                    width: 200px;
+
+                    &:hover
+                    {
+                        transform: scale(1.2);
+
+                        .st0
+                        {
+                            fill: url(#XMLID_42_);
+                        }
+                    }
+                }
             }
 
             .tech-item-electron
