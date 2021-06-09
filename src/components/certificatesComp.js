@@ -12,8 +12,11 @@ import {
     certSecContent,
     language
 } from '../styles/certificates.module.scss'
-import ico from '../images/certificate.jpg'
-import image from '../images/swirl.png'
+import e12 from '../images/certificates/E12_Karol_Jasek.png'
+import e13 from '../images/certificates/E13_Karol_Jasek.png'
+import e14 from '../images/certificates/E14_Karol_Jasek.png'
+import ti from '../images/certificates/TI_Karol_Jasek.png'
+import cinel1 from '../images/certificates/CINEL_Karol_Jasek_1.png'
 
 i18n
   .use(initReactI18next)
@@ -48,7 +51,7 @@ const CertificatesComp = () => {
 
     return (
         <main>
-            <title>Baron Certificates</title>
+            <title>{t('certSiteTitle')}</title>
             <section className={ certificatesSection }>
                 <section id="language" className={ language }>
                     <select id="languageSelect" onChange={ changeLang }>
@@ -63,32 +66,24 @@ const CertificatesComp = () => {
                     </div>
 
                     <div className={ certContent }>
-                        <Certificate image={ ico } title='tytuł'>
-                            Opisdaskhudsahjdsfakhjgbgsdfkjhgfbdhjshbjgkfdfbhdjskhbjksfddfhbsjkhjbksdfhjgfshjfshgjfshjgfdshgjfshgjbfsghjfhjfhdjbsgkdfshjfdshjgbdhsfjgdsfhjgdfhjsghjgfdshjgdfshgbjfdshjbgfdshjdfhjsdfhjgfdshjgfdshgjfdshgjfdshgjfdsghjkfdsghjkfdgshjghjghjdfsghjfdsghjfdsgjhfdsgjhfds
+                        <Certificate image={ e12 } title={t('e12title')}>
+                            {t('e12desc')}
                         </Certificate>
 
-                        <Certificate image={ image } title='tytuł'>
-                            Opis
+                        <Certificate image={ e13 } title={t('e13title')}>
+                            {t('e13desc')}
                         </Certificate>
 
-                        <Certificate image={ ico } title='tytuł'>
-                            Opis
+                        <Certificate image={ e14 } title={t('e14title')}>
+                            {t('e14desc')}
                         </Certificate>
 
-                        <Certificate image={ ico } title='tytuł'>
-                            Opis
+                        <Certificate image={ ti } title={t('tititle')}>
+                            {t('tidesc')}
                         </Certificate>
 
-                        <Certificate image={ image } title='tytuł'>
-                            Opis
-                        </Certificate>
-
-                        <Certificate image={ ico } title='tytuł'>
-                            Opis
-                        </Certificate>
-
-                        <Certificate image={ ico } title='tytuł'>
-                            Opis
+                        <Certificate image={ cinel1 } title={t('cineltitle')}>
+                            {t('cineldesc')}
                         </Certificate>
                     </div>
                 </div>
