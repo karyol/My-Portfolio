@@ -71,7 +71,7 @@ const Contact = () => {
                                 <ul className={ list1 }>
                                     <li>karyol@o2.pl</li>
                                     <li>+48 731 679 751</li>
-                                    <li>Sędziszów Małoposki</li>
+                                    <li>Baron_Drakula#6097</li>
                                 </ul>
                             </div>
                         </div>
