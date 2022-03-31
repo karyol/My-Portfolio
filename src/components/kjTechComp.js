@@ -34,7 +34,7 @@ import Screen10 from '../images/kjt/screen1.png'
 import Screen11 from '../images/kjt/screen1.png'
 import Screen12 from '../images/kjt/screen1.png'
 import Screen13 from '../images/kjt/screen1.png'
-import ERD from '../images/kjt/ERD.png'
+import ERD from '../images/kjt/erd.png'
 
 i18n
   .use(initReactI18next)
