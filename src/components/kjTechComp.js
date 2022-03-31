@@ -21,7 +21,20 @@ import {
 import {
     scrollSvg
 } from '../styles/index.module.scss'
-import Screen from '../images/ta/screen1.png'
+import Screen1 from '../images/kjt/screen1.png'
+import Screen2 from '../images/kjt/screen1.png'
+import Screen3 from '../images/kjt/screen1.png'
+import Screen4 from '../images/kjt/screen1.png'
+import Screen5 from '../images/kjt/screen1.png'
+import Screen6 from '../images/kjt/screen1.png'
+import Screen7 from '../images/kjt/screen1.png'
+import Screen8 from '../images/kjt/screen1.png'
+import Screen9 from '../images/kjt/screen1.png'
+import Screen10 from '../images/kjt/screen1.png'
+import Screen11 from '../images/kjt/screen1.png'
+import Screen12 from '../images/kjt/screen1.png'
+import Screen13 from '../images/kjt/screen1.png'
+import ERD from '../images/kjt/ERD.png'
 
 i18n
   .use(initReactI18next)
@@ -54,7 +67,7 @@ const ScrollToHero = styled.div`
     display: ${({ dispScrHero }) => dispScrHero ? 'block' : 'none' };
 `;
 
-const TradeAwayComp = () => {
+const KJTechComp = () => {
     const { t } = useTranslation();
     const[dispD, dispScrToDesc] = React.useState(true);
     const[dispH, dispScrToHero] = React.useState(false);
@@ -98,7 +111,7 @@ const TradeAwayComp = () => {
     return (
         <main className={ mainPort }>
             <GlobalStyle />
-            <title>{t('portItem2')}</title>
+            <title>{t('portItem3')}</title>
             <nav className={ navbar }>
                 <a href="#hero">
                     <h3>{t('home')}</h3>
@@ -119,13 +132,8 @@ const TradeAwayComp = () => {
             <section id="hero" className={ hero }>
                 <div className={ heroContent }>
                     <div className={ heroDiv }>
-                        <h1>
-                            {t('portItem2')}
-                            <a href="https://github.com/tomkowa64/TradeAway" target="_blank" rel="noreferrer">
-                                <FontAwesomeIcon className={ githubIcon } icon={ faGithub }/>
-                            </a>
-                        </h1>
-                        <img src={ Screen } alt="Screenshot" />
+                        <h1>{t('portItem3')}</h1>
+                        <img src={ Screen1 } alt="Screenshot" />
                     </div>
                 </div>
 
@@ -142,7 +150,20 @@ const TradeAwayComp = () => {
             <section id="description" className={ description }>
                 <div className={ descContent }>
                     <div className={ descDiv }>
-                        <p>{t('tradeAwayDesc1')}</p>
+                        <p>{t('kjTechDesc1')}</p>
+                        <p>{t('kjTechDesc2')}</p>
+                        <p>
+                            {t('kjTechDesc3')}
+                            <img src={ ERD } alt="ERD" />
+                        </p>
+                        <p>{t('kjTechDesc4')}</p>
+                        <p>{t('kjTechDesc41')}</p>
+                        <p>{t('kjTechDesc42')}</p>
+                        <p>{t('kjTechDesc43')}</p>
+                        <p>{t('kjTechDesc44')}</p>
+                        <p>{t('kjTechDesc45')}</p>
+                        <p>{t('kjTechDesc46')}</p>
+                        <p>{t('kjTechDesc5')}</p>
                     </div>
                 </div>
 
@@ -159,4 +180,4 @@ const TradeAwayComp = () => {
     )
 }
 
-export default TradeAwayComp
+export default KJTechComp
