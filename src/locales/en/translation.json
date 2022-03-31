@@ -41,5 +41,15 @@
     "myPortDesc3": "The other graphics, i.e. the logo visible in the upper left corner and button graphics, were created by myself using Inkscape.",
     "myPortDesc4": "For more deatailed information and the full code of the project look at my ",
     "tradeAwayDesc1": "Trade Away description",
-    "kjTechDesc1": "KJ Technologies description"
+    "kjTechDesc1": "Projekt został utworzony wramach zaliczenia przedmiotu Aplikacje Internetowe na studiach. Projekt tworzony był w grupie 2 osobowej przeze mnie oraz Tomasza Kowalskiego.",
+    "kjTechDesc2": "Cel projektu: Utworzenie internetowego sklepu umożliwiającego zakup części i podzespołów komputerowych, jak i peryferii i gotowego sprzętu.",
+    "kjTechDesc3": "Diagram ERD bazy danych wykorzystanej w projekcie.",
+    "kjTechDesc4": "Wykorzystane technologie",
+    "kjTechDesc41": "Framework PHP - Laravel",
+    "kjTechDesc42": "Biblioteki domyśle dołączone do framework'u Laravel implementujące przydatne funkcje (np. obsługa koszyka)",
+    "kjTechDesc43": "Bootstrap 4.0",
+    "kjTechDesc44": "JQuery",
+    "kjTechDesc45": "Github",
+    "kjTechDesc46": "AJAX",
+    "kjTechDesc5": "Wygląd aplikacji"
 }
