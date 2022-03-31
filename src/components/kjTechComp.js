@@ -157,12 +157,14 @@ const KJTechComp = () => {
                             <img src={ ERD } alt="ERD" />
                         </p>
                         <p>{t('kjTechDesc4')}</p>
-                        <p>{t('kjTechDesc41')}</p>
-                        <p>{t('kjTechDesc42')}</p>
-                        <p>{t('kjTechDesc43')}</p>
-                        <p>{t('kjTechDesc44')}</p>
-                        <p>{t('kjTechDesc45')}</p>
-                        <p>{t('kjTechDesc46')}</p>
+                        <ol>
+                            <li>{t('kjTechDesc41')}</li>
+                            <li>{t('kjTechDesc42')}</li>
+                            <li>{t('kjTechDesc43')}</li>
+                            <li>{t('kjTechDesc44')}</li>
+                            <li>{t('kjTechDesc45')}</li>
+                            <li>{t('kjTechDesc46')}</li>
+                        </ol>
                         <p>{t('kjTechDesc5')}</p>
                     </div>
                 </div>

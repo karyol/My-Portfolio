@@ -41,15 +41,15 @@
     "myPortDesc3": "The other graphics, i.e. the logo visible in the upper left corner and button graphics, were created by myself using Inkscape.",
     "myPortDesc4": "For more deatailed information and the full code of the project look at my ",
     "tradeAwayDesc1": "Trade Away description",
-    "kjTechDesc1": "Projekt został utworzony wramach zaliczenia przedmiotu Aplikacje Internetowe na studiach. Projekt tworzony był w grupie 2 osobowej przeze mnie oraz Tomasza Kowalskiego.",
-    "kjTechDesc2": "Cel projektu: Utworzenie internetowego sklepu umożliwiającego zakup części i podzespołów komputerowych, jak i peryferii i gotowego sprzętu.",
-    "kjTechDesc3": "Diagram ERD bazy danych wykorzystanej w projekcie.",
-    "kjTechDesc4": "Wykorzystane technologie",
+    "kjTechDesc1": "The project was created as a final project in the subject of Internet Applications for studies. The project was created in a group of 2 by me and Tomasz Kowalski.",
+    "kjTechDesc2": "Project goal: Create an online store website for the purchase of computer parts and components, as well as peripherals and ready-made equipment.",
+    "kjTechDesc3": "ERD diagram of the database used in the project.",
+    "kjTechDesc4": "Technologies used:",
     "kjTechDesc41": "Framework PHP - Laravel",
-    "kjTechDesc42": "Biblioteki domyśle dołączone do framework'u Laravel implementujące przydatne funkcje (np. obsługa koszyka)",
+    "kjTechDesc42": "Libraries included by default with the Laravel framework that implement useful functions (e.g. shopping cart service)",
     "kjTechDesc43": "Bootstrap 4.0",
     "kjTechDesc44": "JQuery",
     "kjTechDesc45": "Github",
     "kjTechDesc46": "AJAX",
-    "kjTechDesc5": "Wygląd aplikacji"
+    "kjTechDesc5": "Application apperance:"
 }
