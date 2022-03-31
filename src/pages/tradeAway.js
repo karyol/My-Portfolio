@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 
-const PortTemplateComp = React.lazy(() => import('../components/portTemplateComp'));
+const TradeAwayComp = React.lazy(() => import('../components/tradeAwayComp'));
 
 const loadingMarkup = (
     <div style={{ 
@@ -16,18 +16,18 @@ const loadingMarkup = (
     </div>
 );
 
-const PortTemplate = () => {
+const TradeAway = () => {
     const isSSR = typeof window === "undefined";
 
     return (
         <>
             {!isSSR && (
                 <Suspense fallback={ loadingMarkup }>
-                    <PortTemplateComp />
+                    <TradeAwayComp />
                 </Suspense>
             )}
         </>
     )
 };
 
-export default PortTemplate
+export default TradeAway

@@ -25,6 +25,10 @@
     "ctr1": "Jeśli potrzebujesz dewelopera do swojego projektu napisz do mnie maila.",
     "portItem1": "Moje portfolio ",
     "portItem1Desc": "Moja własna strona internetowa portfolio.",
+    "portItem2": "Trade Away ",
+    "portItem2Desc": "Projekt aplikacji mobilnej do handlu przedmiotami.",
+    "portItem3": "KJ Technologies ",
+    "portItem3Desc": "Projekt strony dla sklepu komputerowego.",
     "scrollWhat": "Sprawdź moje projekty",
     "scrollAbout": "O mnie",
     "scrollContact": "Kontakt",
@@ -35,5 +39,6 @@
     "myPortDesc13": " pod tymi linkami.",
     "myPortDesc2": "Grafika widoczna w tle sekcji startowej, grafika sekcji kontaktowej oraz grafiki prezentujące wykorzystywane przeze mnie technologie zostały pozyskane z darmowych źródeł i są udostępnione przez autorów na zasadzie licencji publicznej.",
     "myPortDesc3": "Pozostałe grafiki tj. widoczne w lewym górnym rogu logo oraz grafiki przycisków utworzyłem własnoręcznie z wykorzystaniem programu Inkscape.",
-    "myPortDesc4": "Po bardziej szczegółowe informacje oraz pełny kod projektu zajrzyj na mój "
+    "myPortDesc4": "Po bardziej szczegółowe informacje oraz pełny kod projektu zajrzyj na mój ",
+    "tradeAwayDesc1": "Trade Away description"
 }

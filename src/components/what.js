@@ -118,16 +118,12 @@ const What = () => {
                             {t('portItem1Desc')}
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate#hero">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        <PortfolioItem name={t('portItem2')} url="/tradeAway#hero">
+                            {t('portItem2Desc')}
                         </PortfolioItem>
 
-                        <PortfolioItem name="Template" url="/portTemplate#hero">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                        </PortfolioItem>
-
-                        <PortfolioItem name="Template" url="/portTemplate#hero">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        <PortfolioItem name={t('portItem3')} url="/kjTechnologies#hero">
+                            {t('portItem3Desc')}
                         </PortfolioItem>
                     </Carousel>
                 </div>
