@@ -22,18 +22,18 @@ import {
     scrollSvg
 } from '../styles/index.module.scss'
 import Screen1 from '../images/kjt/screen1.png'
-import Screen2 from '../images/kjt/screen1.png'
-import Screen3 from '../images/kjt/screen1.png'
-import Screen4 from '../images/kjt/screen1.png'
-import Screen5 from '../images/kjt/screen1.png'
-import Screen6 from '../images/kjt/screen1.png'
-import Screen7 from '../images/kjt/screen1.png'
-import Screen8 from '../images/kjt/screen1.png'
-import Screen9 from '../images/kjt/screen1.png'
-import Screen10 from '../images/kjt/screen1.png'
-import Screen11 from '../images/kjt/screen1.png'
-import Screen12 from '../images/kjt/screen1.png'
-import Screen13 from '../images/kjt/screen1.png'
+import Screen2 from '../images/kjt/screen2.png'
+import Screen3 from '../images/kjt/screen3.png'
+import Screen4 from '../images/kjt/screen4.png'
+import Screen5 from '../images/kjt/screen5.png'
+import Screen6 from '../images/kjt/screen6.png'
+import Screen7 from '../images/kjt/screen7.png'
+import Screen8 from '../images/kjt/screen8.png'
+import Screen9 from '../images/kjt/screen9.png'
+import Screen10 from '../images/kjt/screen10.png'
+import Screen11 from '../images/kjt/screen11.png'
+import Screen12 from '../images/kjt/screen12.png'
+import Screen13 from '../images/kjt/screen13.png'
 import ERD from '../images/kjt/erd.png'
 
 i18n
@@ -152,10 +152,8 @@ const KJTechComp = () => {
                     <div className={ descDiv }>
                         <p>{t('kjTechDesc1')}</p>
                         <p>{t('kjTechDesc2')}</p>
-                        <p>
-                            {t('kjTechDesc3')}
-                            <img src={ ERD } alt="ERD" />
-                        </p>
+                        <p>{t('kjTechDesc3')}</p>
+                        <img src={ ERD } alt="ERD" />
                         <p>{t('kjTechDesc4')}</p>
                         <ol>
                             <li>{t('kjTechDesc41')}</li>
